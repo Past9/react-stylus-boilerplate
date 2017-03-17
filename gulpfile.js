@@ -39,7 +39,13 @@ var bundlerTask = function(options) {
 
   var bundler = browserify({
     entries: [options.src],
-    transform: [[babelify, {presets: ["react"]}]],
+    transform: [
+      [babelify, {presets: [
+        "react", 
+        "es2015",
+        "stage-2"
+      ]}]
+    ],
     debug: options.development,
     cache: {},
     packageCache: {},
